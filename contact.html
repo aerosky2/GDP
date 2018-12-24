@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+		<title>Contact</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" href="style-gdp.css"/>
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<meta charset="utf-8">
+		<meta name="description" content="Application mobile du Mooc GDP de Rémi Bachelet" />
+		<meta name="author" content="Réalisé par Benoît Martinet"/>
+		<meta name="copyright" content="MOOC GDP" />
+    </head>
+
+    <body>
+
+				<!--boite de dialogue mail-->
+			<div data-role="page" id="boite-mail" data-theme="a" data-dialog="true">
+
+				<div data-role="header" data-theme="b">
+					<H4>Mieux vous connaître </H4>
+				</div>
+
+				<div data-role="content">
+					<!--<form action="#" method="post">  envoie en php à un mail
+						<label for="mail">"Renseignez votre mail avant de pouvoir accéder aux contenu</label>
+						<input type="email" id="mail" name="mail" placeholder="remibachelet@gdp.org">
+						<button onclick="send()">Envoyez</button>
+					</form>-->
+					<div id="erreur" style="display:none;">
+						<p>Vous n'avez pas rempli correctement les champs du formulaire !</p>
+					</div>
+
+					<form id="form" method="post"  action="">
+						  <label for="nom">Nom:</label>
+							<input type="text" name="nom" id="nom" required placeholder="Nom" />
+						   <label for="prenom">Prénom:</label>
+							<input type="text" name="prenom" id="prenom" required placeholder="Prénom"/>
+						  <label for="email">Email:</label>
+							<input type="email" name="email" id="email" required placeholder="remi@exemple.com"/>
+              <label for="message">Inscription gratuite au mooc :</label>
+              <textarea rows="4" cols="50" id="message" name="message" disabled="true">
+                Je souhaite obtenir un lien d'inscription pour le MOOC GDP
+  </textarea>
+						 <input type="reset" id="refresh" value="refresh"/>
+						 <input type="submit" id="envoyer" value="Envoyez" />
+					</form>
+				</div>
+
+			</div>
+
+			<script>
+			$(document).ready(function(){
+				$('#form').submit(function(){
+					nom1 = $(this).find("#nom").val;
+					prenom1 = $(this).find("#prenom").val;
+					email1 =$(this).find("email").value;
+					alert(nom1)
+					return false;
+				});
+
+
+				$('#refresh').click(function(){
+					alert('ddddd');
+					$('#nom').value='';
+					$('#prenom').value='';
+					$('#eamil').value='';
+					alert('rrr');
+				});
+			});
+
+
+
+			</script>
+
+    </body>
+
+</html>
